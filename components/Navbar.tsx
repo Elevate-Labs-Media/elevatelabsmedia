@@ -39,7 +39,7 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <nav className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-wide">
-                    {["Home", "Services", "Works", "Blog", "Contact"].map((item) => (
+                    {["Home", "About", "Services", "Works", "Blog", "FAQ", "Contact"].map((item) => (
                         <Link key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-300 transition-colors">
                             {item}
                         </Link>
@@ -47,8 +47,8 @@ export default function Navbar() {
                 </nav>
 
                 {/* Mobile Toggle */}
-                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-2xl">
-                    {isOpen ? <HiX /> : <HiMenuAlt4 />}
+                <button onClick={() => setIsOpen(true)} className="md:hidden text-2xl relative z-[101]">
+                    <HiMenuAlt4 />
                 </button>
             </div>
 
@@ -57,8 +57,12 @@ export default function Navbar() {
                 ref={menuRef}
                 className="fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center -translate-y-full z-[100]"
             >
+                <button onClick={() => setIsOpen(false)} className="absolute top-6 right-6 text-2xl text-white">
+                    <HiX />
+                </button>
+
                 <nav className="flex flex-col gap-6 text-center">
-                    {["Home", "Services", "Works", "Blog", "FAQ", "Contact"].map((item) => (
+                    {["Home", "About", "Services", "Works", "Blog", "FAQ", "Contact"].map((item) => (
                         <Link
                             key={item}
                             href={`#${item.toLowerCase()}`}
