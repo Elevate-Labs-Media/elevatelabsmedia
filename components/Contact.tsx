@@ -1,90 +1,62 @@
 "use client";
-
-import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Contact() {
-    const form = useRef<HTMLFormElement>(null);
-    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-    const sendEmail = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!form.current) return;
-
-        setStatus('sending');
-
-        emailjs
-            .sendForm('service_w4ehq17', 'template_ls2em6n', form.current, {
-                publicKey: 'XR7hy2NvuKPVARIUd',
-            })
-            .then(
-                () => {
-                    setStatus('success');
-                    form.current?.reset();
-                    setTimeout(() => setStatus('idle'), 3000);
-                },
-                (error: any) => {
-                    console.error('FAILED...', error.text);
-                    setStatus('error');
-                    setTimeout(() => setStatus('idle'), 3000);
-                },
-            );
-    };
-
     return (
-        <section id="contact" className="py-32 px-6 md:px-12 bg-black text-center">
-            <h2 className="text-[10vw] leading-none font-bold uppercase tracking-tighter mb-12">Let's Talk</h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Have a project in mind? We'd love to hear from you. Send us a message and let's start something together.</p>
+        <section id="contact" className="py-24 px-6 md:px-12 bg-[#050505] text-white">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
 
-            <form ref={form} onSubmit={sendEmail} className="max-w-xl mx-auto space-y-6 text-left">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest text-gray-500">Name</label>
-                        <input type="text" name="name" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors" placeholder="John Doe" />
+                {/* Left Side - Form */}
+                <div className="w-full md:w-2/3">
+                    <h2 className="text-xl font-bold uppercase tracking-widest mb-12">Send us a message</h2>
+
+                    <form className="space-y-12">
+                        <div className="relative">
+                            <input type="text" placeholder="Your Name" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600" />
+                        </div>
+                        <div className="relative">
+                            <input type="email" placeholder="Your Email" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600" />
+                        </div>
+                        <div className="relative">
+                            <textarea rows={4} placeholder="Your Message" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600 resize-none" />
+                        </div>
+
+                        <button type="submit" className="w-full bg-[#333] text-white font-bold uppercase tracking-widest py-4 hover:bg-white hover:text-black transition-all duration-300">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+
+                {/* Right Side - Info */}
+                <div className="w-full md:w-1/3 space-y-12">
+                    <h2 className="text-xl font-bold uppercase tracking-widest mb-12">Contact Info</h2>
+
+                    <div>
+                        <h3 className="text-gray-500 font-bold mb-4">Where to Find Us</h3>
+                        <p className="text-gray-400 leading-relaxed">
+                            City Bay Business Center<br />
+                            Office No 523 | Abu Hail<br />
+                            Road Deira – Dubai
+                        </p>
                     </div>
-                    <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest text-gray-500">Email</label>
-                        <input type="email" name="email" required className="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors" placeholder="john@example.com" />
+
+                    <div>
+                        <h3 className="text-gray-500 font-bold mb-4">Email Us At</h3>
+                        <a href="mailto:info@digtel.ae" className="text-gray-400 hover:text-white transition-colors">info@digtel.ae</a>
+                    </div>
+
+                    <div>
+                        <h3 className="text-gray-500 font-bold mb-4">Call Us At</h3>
+                        <a href="tel:+971503535409" className="text-gray-400 hover:text-white transition-colors">+971 503535409</a>
+                    </div>
+
+                    <div className="flex gap-6 text-xl pt-4">
+                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaFacebookF /></a>
+                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaInstagram /></a>
+                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaLinkedinIn /></a>
                     </div>
                 </div>
 
-
-
-                <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest text-gray-500">Message</label>
-                    <textarea name="message" required rows={4} className="w-full bg-transparent border-b border-white/20 py-2 focus:border-white outline-none transition-colors resize-none" placeholder="Tell us about your project..." />
-                </div>
-
-                <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className="w-full bg-white text-black font-bold uppercase tracking-widest py-4 hover:bg-gray-200 transition-colors mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                    {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent!' : status === 'error' ? 'Failed to Send' : 'Send Message'}
-                </button>
-            </form>
-
-            <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm uppercase tracking-widest text-gray-500">
-                <div>
-                    <h4 className="text-white mb-4">Socials</h4>
-                    <ul className="space-y-2">
-                        <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Facebook</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 className="text-white mb-4">Location</h4>
-                    <p>New York, NY<br />10001, USA</p>
-                </div>
-                <div>
-                    <h4 className="text-white mb-4">Call</h4>
-                    <p>+1 (555) 000-0000</p>
-                </div>
-                <div>
-                    <h4 className="text-white mb-4">Legal</h4>
-                    <p>Privacy Policy<br />Terms of Service</p>
-                </div>
             </div>
         </section>
     );

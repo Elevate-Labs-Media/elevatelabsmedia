@@ -35,9 +35,9 @@ export default function Services() {
 
     return (
         <section id="services" ref={container} className="py-24 px-6 md:px-12 bg-black text-white">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left">
                 <h2 className="text-6xl font-bold uppercase tracking-tighter">Our<br />Services</h2>
-                <p className="text-gray-400 max-w-sm mt-8 md:mt-0">Comprehensive digital solutions tailored to elevate your brand in the modern landscape.</p>
+                <p className="text-gray-400 max-w-sm mt-8 md:mt-0 md:text-right">Comprehensive digital solutions tailored to elevate your brand in the modern landscape.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-white/20">

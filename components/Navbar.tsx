@@ -31,29 +31,31 @@ export default function Navbar() {
     );
 
     return (
-        <header ref={containerRef} className="fixed top-0 w-full z-50 mix-blend-difference text-white px-6 py-4 flex justify-between items-center">
-            <Link href="/" className="text-2xl font-bold tracking-tighter z-50 uppercase">
-                Elevate Labs Media
-            </Link>
+        <header ref={containerRef} className="fixed top-0 w-full z-50">
+            <div className="flex justify-between items-center px-6 py-4 mix-blend-difference text-white relative z-50">
+                <Link href="/" className="text-2xl font-bold tracking-tighter uppercase">
+                    Elevate Labs Media
+                </Link>
 
-            {/* Desktop Menu */}
-            <nav className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-wide">
-                {["Home", "Services", "Works", "Blog", "Contact"].map((item) => (
-                    <Link key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-300 transition-colors">
-                        {item}
-                    </Link>
-                ))}
-            </nav>
+                {/* Desktop Menu */}
+                <nav className="hidden md:flex gap-8 text-sm font-medium uppercase tracking-wide">
+                    {["Home", "Services", "Works", "Blog", "Contact"].map((item) => (
+                        <Link key={item} href={`#${item.toLowerCase()}`} className="hover:text-gray-300 transition-colors">
+                            {item}
+                        </Link>
+                    ))}
+                </nav>
 
-            {/* Mobile Toggle */}
-            <button onClick={() => setIsOpen(!isOpen)} className="md:hidden z-50 text-2xl">
-                {isOpen ? <HiX /> : <HiMenuAlt4 />}
-            </button>
+                {/* Mobile Toggle */}
+                <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-2xl">
+                    {isOpen ? <HiX /> : <HiMenuAlt4 />}
+                </button>
+            </div>
 
             {/* Mobile Menu Overlay */}
             <div
                 ref={menuRef}
-                className="fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center -translate-y-full z-40"
+                className="fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center -translate-y-full z-[100]"
             >
                 <nav className="flex flex-col gap-6 text-center">
                     {["Home", "Services", "Works", "Blog", "FAQ", "Contact"].map((item) => (
@@ -61,14 +63,14 @@ export default function Navbar() {
                             key={item}
                             href={`#${item.toLowerCase()}`}
                             onClick={() => setIsOpen(false)}
-                            className="text-4xl font-bold uppercase tracking-tighter hover:text-gray-400 transition-colors"
+                            className="text-4xl font-bold uppercase tracking-tighter hover:text-gray-400 transition-colors text-white"
                         >
                             {item}
                         </Link>
                     ))}
                 </nav>
 
-                <div className="mt-12 flex gap-6 text-xl">
+                <div className="mt-12 flex gap-6 text-xl text-white">
                     <Link href="#" className="hover:text-gray-400"><FaFacebookF /></Link>
                     <Link href="#" className="hover:text-gray-400"><FaInstagram /></Link>
                     <Link href="#" className="hover:text-gray-400"><FaLinkedinIn /></Link>
