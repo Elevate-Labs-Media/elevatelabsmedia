@@ -1,43 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Globe, PenTool, Smartphone, Zap, Monitor } from "lucide-react";
+import {
+  Code,
+  Globe,
+  PenTool,
+  Smartphone,
+  Zap,
+  Monitor,
+  ShoppingCart,
+  Search,
+} from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
-    icon: <Globe className="w-8 h-8" />,
-    title: "Web Development",
+    icon: <Zap className="w-8 h-8" />,
+    title: "Branding",
+    slug: "branding",
     description:
-      "High-performance websites built with Next.js and modern technologies.",
+      "Building resilient brand identities that resonate with your audience.",
   },
   {
-    icon: <Smartphone className="w-8 h-8" />,
-    title: "App Development",
-    description: "Cross-platform mobile applications for iOS and Android.",
+    icon: <Globe className="w-8 h-8" />,
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    description:
+      "Data-driven strategies to amplify your brand's voice and maximize ROI.",
   },
   {
     icon: <PenTool className="w-8 h-8" />,
-    title: "UI/UX Design",
+    title: "Creative Design",
+    slug: "creative-design",
     description:
-      "Intuitive and beautiful user interfaces that drive engagement.",
-  },
-  {
-    icon: <Zap className="w-8 h-8" />,
-    title: "Branding",
-    description:
-      "Strategic brand identity design to make your business stand out.",
-  },
-  {
-    icon: <Code className="w-8 h-8" />,
-    title: "Custom Software",
-    description:
-      "Tailored software solutions to solve complex business problems.",
+      "Visual storytelling that captivates and converts with stunning aesthetics.",
   },
   {
     icon: <Monitor className="w-8 h-8" />,
-    title: "SEO Optimization",
+    title: "Media Production",
+    slug: "media-production",
     description:
-      "Data-driven strategies to improve your search engine rankings.",
+      "High-quality production services to bring your brand's narrative to life.",
+  },
+  {
+    icon: <ShoppingCart className="w-8 h-8" />,
+    title: "E-Commerce Development",
+    slug: "e-commerce",
+    description:
+      "Robust, scalable, and sales-driven online stores tailored to your needs.",
+  },
+  {
+    icon: <Search className="w-8 h-8" />,
+    title: "SEO Optimization",
+    slug: "seo-optimization",
+    description:
+      "Comprehensive strategies to improve your search engine rankings.",
   },
 ];
 
@@ -58,26 +75,31 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors relative overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <Link key={index} href={`/services/${service.slug}`}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className="group h-full p-8 rounded-3xl glass glass-hover relative overflow-hidden"
+              >
+                {/* Glossy Reflection Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="relative z-10">
-                <div className="mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
+                <div className="relative z-10">
+                  <div className="mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-glow">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-gray-400">{service.description}</p>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

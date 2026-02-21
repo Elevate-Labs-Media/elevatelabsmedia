@@ -10,8 +10,13 @@ export function generateStaticParams() {
   }));
 }
 
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  const service = SERVICES[params.slug as keyof typeof SERVICES];
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
+  const service = SERVICES[slug as keyof typeof SERVICES];
   if (!service) return { title: "Service Not Found" };
 
   return {
@@ -36,7 +41,7 @@ export default async function ServiceDetail({
     <div className="min-h-screen pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
         <Link
-          href="/services"
+          href="/#services"
           className="inline-flex items-center text-gray-400 hover:text-white mb-10 transition-colors group"
         >
           <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />

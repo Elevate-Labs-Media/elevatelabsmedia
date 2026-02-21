@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/LenisScroll";
 import Navigation from "@/components/Navigation";
-import GeometricBackground from "@/components/GeometricBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,7 +29,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        <GeometricBackground />
         <Navigation />
         <LenisScroll>{children}</LenisScroll>
       </body>

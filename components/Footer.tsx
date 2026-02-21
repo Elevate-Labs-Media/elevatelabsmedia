@@ -45,20 +45,34 @@ const Footer = () => {
         </div>
 
         {/* Navigation Column */}
-        <div>
+        <div className="lg:col-span-1">
           <h3 className="text-white font-bold mb-6 text-lg">Company</h3>
-          <ul className="space-y-3">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="hover:text-primary transition-colors block"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-2 gap-4">
+            <ul className="space-y-3">
+              {NAV_LINKS.slice(0, 4).map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary transition-colors block text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-3">
+              {NAV_LINKS.slice(4).map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="hover:text-primary transition-colors block text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Services Column - Spans 2 columns on large screens to accommodate grid */}

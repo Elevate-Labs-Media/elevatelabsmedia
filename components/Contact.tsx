@@ -2,29 +2,74 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
-const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
+interface ContactProps {
+  defaultService?: string;
+}
+
+/**
+ * EMAILJS SETUP GUIDE:
+ * 1. Visit https://www.emailjs.com/ and create an account.
+ * 2. In 'Email Services', add your provider (e.g., Gmail) and copy the 'Service ID'.
+ * 3. In 'Email Templates', create a new template and copy the 'Template ID'.
+ * 4. In 'Account' -> 'API Keys', copy your 'Public Key'.
+ * 5. Paste these values into your '.env.local' file or directly below.
+ */
+const Contact = ({ defaultService = "" }: ContactProps) => {
+  // --- CONFIGURATION ---
+  // If you are using .env.local, these will load automatically.
+  // Otherwise, you can replace these strings with your actual IDs.
+  const SERVICE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+  const TEMPLATE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+  const PUBLIC_KEY =
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
     service: defaultService,
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus("idle");
 
-    // Simulate EmailJS + User would add actual integration here
-    // import emailjs from '@emailjs/browser';
-    // emailjs.send Form...
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formState.name,
+          email: formState.email,
+          service: formState.service,
+          message: formState.message,
+        },
+        PUBLIC_KEY,
+      );
 
-    setTimeout(() => {
-      setIsSubmitting(false);
       setStatus("success");
-    }, 1500);
+
+      // Reset form after success
+      setFormState({
+        name: "",
+        email: "",
+        service: defaultService,
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -36,12 +81,25 @@ const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
           className="p-8 bg-primary/10 border border-primary text-center rounded-2xl"
         >
           <h3 className="text-2xl font-bold text-primary mb-2">
-            Message Sent!
+            Message Sent Successfully!
           </h3>
-          <p className="text-white">We'll get back to you shortly.</p>
+          <p className="text-white">
+            Thank you for contacting us. We'll get back to you shortly.
+          </p>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
+          {status === "error" && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="p-4 bg-red-500/10 border border-red-500 text-red-500 text-center rounded-lg"
+            >
+              Something went wrong. Please check your EmailJS configuration or
+              try again.
+            </motion.div>
+          )}
+          {/* Name + Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-sm font-mono text-gray-400 uppercase">
@@ -58,6 +116,7 @@ const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
                 }
               />
             </div>
+
             <div className="space-y-2">
               <label className="text-sm font-mono text-gray-400 uppercase">
                 Email
@@ -75,6 +134,7 @@ const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
             </div>
           </div>
 
+          {/* Service */}
           <div className="space-y-2">
             <label className="text-sm font-mono text-gray-400 uppercase">
               Service Interest
@@ -90,6 +150,7 @@ const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
             />
           </div>
 
+          {/* Message */}
           <div className="space-y-2">
             <label className="text-sm font-mono text-gray-400 uppercase">
               Message
@@ -105,6 +166,12 @@ const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
               }
             />
           </div>
+
+          {status === "error" && (
+            <p className="text-red-500 text-sm">
+              Something went wrong. Please try again.
+            </p>
+          )}
 
           <button
             disabled={isSubmitting}

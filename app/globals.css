@@ -8,17 +8,61 @@
   --font-mono: var(--font-geist-mono), monospace;
   
   /* Custom Colors */
-  --color-primary: #D9F70D; /* Lime Green */
+  --color-primary: #fff300; /* Vibrant Yellow */
+  --color-primary-glow: rgba(255, 243, 0, 0.15);
   --color-secondary: #00F0FF; /* Electric Blue */
   --color-accent: #1a1a1a;
   
+  /* Glassmorphism Utilities */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+  
   /* Animation Utilities */
   --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 var(--color-primary-glow);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px var(--color-primary-glow);
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
 }
 
 /* Lenis Smooth Scroll */

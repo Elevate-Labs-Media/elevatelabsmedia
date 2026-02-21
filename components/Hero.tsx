@@ -39,7 +39,8 @@ const Hero = () => {
           className="group relative px-8 py-4 bg-primary text-black font-bold text-lg rounded-full overflow-hidden transition-transform hover:scale-105"
         >
           <span className="relative z-10 flex items-center gap-2">
-            START A PROJECT <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            START A PROJECT{" "}
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </span>
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
         </Link>
@@ -50,7 +51,7 @@ const Hero = () => {
           SEE OUR WORK
         </Link>
       </motion.div>
-      
+
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[1px] h-24 bg-gradient-to-b from-transparent via-white/20 to-transparent animate-pulse" />
     </section>
   );
