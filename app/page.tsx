@@ -1,24 +1,38 @@
-import Navbar from "@/components/Navbar";
+"use client";
+
+import CanvasContainer from "@/components/CanvasContainer";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Works from "@/components/Works";
-import Blog from "@/components/Blog";
-import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import Work from "@/components/Work";
+import FAQ from "@/components/FAQ";
+import Blog from "@/components/Blog";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-white selection:text-black">
-      <Navbar />
+    <main className="relative min-h-screen">
+      <CanvasContainer />
       <Hero />
-      <About />
-      <Services />
-      <Works />
-      <Blog />
-      <FAQ />
-      <Contact />
+      <section id="services">
+        <Services />
+      </section>
+      <section id="about">
+        <About />
+      </section>
+      <section id="work">
+        <Work />
+      </section>
+      <section id="blog">
+        <Blog />
+      </section>
+      <section id="faq">
+        <FAQ />
+      </section>
+      <section id="contact">
+        <ContactSection />
+      </section>
       <Footer />
     </main>
   );

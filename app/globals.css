@@ -8,9 +8,17 @@
   --font-mono: var(--font-geist-mono), monospace;
   
   /* Custom Colors */
-  --color-primary: #ffffff;
-  --color-secondary: #a1a1a1;
-  --color-accent: #333333;
+  --color-primary: #D9F70D; /* Lime Green */
+  --color-secondary: #00F0FF; /* Electric Blue */
+  --color-accent: #1a1a1a;
+  
+  /* Animation Utilities */
+  --animate-float: float 6s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
 }
 
 /* Lenis Smooth Scroll */
@@ -46,6 +54,6 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: var(--color-foreground);
-  color: var(--color-background);
+  background-color: var(--color-primary);
+  color: #000000;
 }

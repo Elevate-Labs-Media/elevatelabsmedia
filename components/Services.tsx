@@ -1,57 +1,88 @@
 "use client";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaArrowRight } from "react-icons/fa";
 
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "framer-motion";
+import { Code, Globe, PenTool, Smartphone, Zap, Monitor } from "lucide-react";
 
 const services = [
-    { title: "SEO Optimization", desc: "Rank higher and drive traffic." },
-    { title: "Content Strategy", desc: "Stories that convert." },
-    { title: "Social Media", desc: "Build a loyal community." },
-    { title: "Web Development", desc: "Fast, responsive, secure." },
-    { title: "PPC Advertising", desc: "Maximize your ROI." },
-    { title: "Branding", desc: "Stand out from the crowd." },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "Web Development",
+    description:
+      "High-performance websites built with Next.js and modern technologies.",
+  },
+  {
+    icon: <Smartphone className="w-8 h-8" />,
+    title: "App Development",
+    description: "Cross-platform mobile applications for iOS and Android.",
+  },
+  {
+    icon: <PenTool className="w-8 h-8" />,
+    title: "UI/UX Design",
+    description:
+      "Intuitive and beautiful user interfaces that drive engagement.",
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Branding",
+    description:
+      "Strategic brand identity design to make your business stand out.",
+  },
+  {
+    icon: <Code className="w-8 h-8" />,
+    title: "Custom Software",
+    description:
+      "Tailored software solutions to solve complex business problems.",
+  },
+  {
+    icon: <Monitor className="w-8 h-8" />,
+    title: "SEO Optimization",
+    description:
+      "Data-driven strategies to improve your search engine rankings.",
+  },
 ];
 
-export default function Services() {
-    const container = useRef(null);
+const Services = () => {
+  return (
+    <section className="py-20 px-4 md:px-10 bg-black/50 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">OUR EXPERTISE</h2>
+          <div className="w-20 h-1 bg-primary mx-auto" />
+        </motion.div>
 
-    useGSAP(() => {
-        gsap.from(".service-item", {
-            scrollTrigger: {
-                trigger: container.current,
-                start: "top 80%",
-            },
-            y: 50,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power2.out",
-        });
-    }, { scope: container });
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="group p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-    return (
-        <section id="services" ref={container} className="py-24 px-6 md:px-12 bg-black text-white">
-            <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 text-center md:text-left">
-                <h2 className="text-6xl font-bold uppercase tracking-tighter">Our<br />Services</h2>
-                <p className="text-gray-400 max-w-sm mt-8 md:mt-0 md:text-right">Comprehensive digital solutions tailored to elevate your brand in the modern landscape.</p>
-            </div>
+              <div className="relative z-10">
+                <div className="mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400">{service.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-white/20">
-                {services.map((s, i) => (
-                    <div key={i} className="service-item group border-r border-b border-white/20 p-10 hover:bg-white hover:text-black transition-colors duration-500 cursor-pointer relative overflow-hidden">
-                        <div className="flex justify-between items-start mb-12">
-                            <span className="text-sm font-mono">0{i + 1}</span>
-                            <FaArrowRight className="text-xl -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                        </div>
-                        <h3 className="text-3xl font-bold mb-4">{s.title}</h3>
-                        <p className="text-gray-500 group-hover:text-gray-800 transition-colors">{s.desc}</p>
-                    </div>
-                ))}
-            </div>
-        </section>
-    );
-}
+export default Services;

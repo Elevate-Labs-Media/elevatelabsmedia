@@ -1,63 +1,122 @@
 "use client";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
-export default function Contact() {
-    return (
-        <section id="contact" className="py-24 px-6 md:px-12 bg-[#050505] text-white">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24">
+import { useState } from "react";
+import { motion } from "framer-motion";
 
-                {/* Left Side - Form */}
-                <div className="w-full md:w-2/3">
-                    <h2 className="text-xl font-bold uppercase tracking-widest mb-12">Send us a message</h2>
+const Contact = ({ defaultService = "" }: { defaultService?: string }) => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    service: defaultService,
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-                    <form className="space-y-12">
-                        <div className="relative">
-                            <input type="text" placeholder="Your Name" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600" />
-                        </div>
-                        <div className="relative">
-                            <input type="email" placeholder="Your Email" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600" />
-                        </div>
-                        <div className="relative">
-                            <textarea rows={4} placeholder="Your Message" className="w-full bg-transparent border-b border-gray-800 py-4 focus:border-white outline-none transition-colors text-white placeholder-gray-600 resize-none" />
-                        </div>
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-                        <button type="submit" className="w-full bg-[#333] text-white font-bold uppercase tracking-widest py-4 hover:bg-white hover:text-black transition-all duration-300">
-                            Submit
-                        </button>
-                    </form>
-                </div>
+    // Simulate EmailJS + User would add actual integration here
+    // import emailjs from '@emailjs/browser';
+    // emailjs.send Form...
 
-                {/* Right Side - Info */}
-                <div className="w-full md:w-1/3 space-y-12">
-                    <h2 className="text-xl font-bold uppercase tracking-widest mb-12">Contact Info</h2>
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setStatus("success");
+    }, 1500);
+  };
 
-                    <div>
-                        <h3 className="text-gray-500 font-bold mb-4">Where to Find Us</h3>
-                        <p className="text-gray-400 leading-relaxed">
-                            City Bay Business Center<br />
-                            Office No 523 | Abu Hail<br />
-                            Road Deira – Dubai
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-gray-500 font-bold mb-4">Email Us At</h3>
-                        <a href="mailto:info@digtel.ae" className="text-gray-400 hover:text-white transition-colors">info@digtel.ae</a>
-                    </div>
-
-                    <div>
-                        <h3 className="text-gray-500 font-bold mb-4">Call Us At</h3>
-                        <a href="tel:+971503535409" className="text-gray-400 hover:text-white transition-colors">+971 503535409</a>
-                    </div>
-
-                    <div className="flex gap-6 text-xl pt-4">
-                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaFacebookF /></a>
-                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaInstagram /></a>
-                        <a href="#" className="text-white hover:text-gray-400 transition-colors"><FaLinkedinIn /></a>
-                    </div>
-                </div>
-
+  return (
+    <div className="w-full max-w-2xl mx-auto">
+      {status === "success" ? (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="p-8 bg-primary/10 border border-primary text-center rounded-2xl"
+        >
+          <h3 className="text-2xl font-bold text-primary mb-2">
+            Message Sent!
+          </h3>
+          <p className="text-white">We'll get back to you shortly.</p>
+        </motion.div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-sm font-mono text-gray-400 uppercase">
+                Name
+              </label>
+              <input
+                required
+                type="text"
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:outline-none transition-colors"
+                placeholder="John Doe"
+                value={formState.name}
+                onChange={(e) =>
+                  setFormState({ ...formState, name: e.target.value })
+                }
+              />
             </div>
-        </section>
-    );
-}
+            <div className="space-y-2">
+              <label className="text-sm font-mono text-gray-400 uppercase">
+                Email
+              </label>
+              <input
+                required
+                type="email"
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:outline-none transition-colors"
+                placeholder="john@example.com"
+                value={formState.email}
+                onChange={(e) =>
+                  setFormState({ ...formState, email: e.target.value })
+                }
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-mono text-gray-400 uppercase">
+              Service Interest
+            </label>
+            <input
+              type="text"
+              className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:outline-none transition-colors"
+              placeholder="Web Development, SEO..."
+              value={formState.service}
+              onChange={(e) =>
+                setFormState({ ...formState, service: e.target.value })
+              }
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-mono text-gray-400 uppercase">
+              Message
+            </label>
+            <textarea
+              required
+              rows={4}
+              className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:outline-none transition-colors"
+              placeholder="Tell us about your project..."
+              value={formState.message}
+              onChange={(e) =>
+                setFormState({ ...formState, message: e.target.value })
+              }
+            />
+          </div>
+
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="w-full py-4 bg-primary text-black font-bold text-lg rounded-lg hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+          </button>
+        </form>
+      )}
+    </div>
+  );
+};
+
+export default Contact;

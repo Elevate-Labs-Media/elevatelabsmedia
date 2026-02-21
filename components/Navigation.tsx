@@ -1,0 +1,102 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { NAV_LINKS } from "@/lib/constants";
+import { usePathname } from "next/navigation";
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const toggleOpen = () => setIsOpen(!isOpen);
+
+  const menuVariants = {
+    closed: {
+      x: "100%",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      } as any,
+    },
+    open: {
+      x: "0%",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      } as any,
+    },
+  };
+
+  const linkVariants = {
+    closed: { x: 50, opacity: 0 },
+    open: (i: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+      },
+    }),
+  };
+
+  return (
+    <>
+      <button
+        onClick={toggleOpen}
+        className="fixed top-6 right-6 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-primary hover:text-black transition-colors"
+        aria-label="Toggle Menu"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={menuVariants}
+            className="fixed top-0 right-0 w-full md:w-[400px] h-screen bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col justify-center px-12"
+          >
+            <nav className="flex flex-col gap-6">
+              {NAV_LINKS.map((link, i) => (
+                <motion.div key={link.href} custom={i} variants={linkVariants}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-3xl md:text-5xl font-bold hover:text-primary transition-colors ${
+                      pathname === link.href ? "text-primary" : "text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mt-12 pt-12 border-t border-white/10"
+            >
+              <p className="text-gray-400 mb-2">Get in touch</p>
+              <a
+                href="mailto:hello@elevatelabs.com"
+                className="text-xl text-white hover:text-primary transition-colors"
+              >
+                hello@elevatelabs.com
+              </a>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+export default Navigation;

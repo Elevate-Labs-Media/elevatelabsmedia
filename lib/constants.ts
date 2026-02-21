@@ -1,0 +1,89 @@
+export const SERVICES = {
+  "digital-marketing": {
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    description: "Data-driven strategies to amplify your brand's voice and maximize ROI in the digital landscape.",
+    subServices: [
+      "Social Media Marketing",
+      "Search Engine Optimization (SEO)",
+      "Pay-Per-Click Advertising (PPC)",
+      "Email Marketing",
+      "Analytics & Reporting",
+      "Google Ads",
+    ],
+  },
+  branding: {
+    title: "Branding",
+    slug: "branding",
+    description: "Building resilient brand identities that resonate with your audience and stand the test of time.",
+    subServices: [
+      "Brand Strategy",
+      "Visual Identity Design",
+      "Brand Guidelines",
+      "Rebranding",
+      "Brand Messaging",
+    ],
+  },
+  "e-commerce": {
+    title: "E-Commerce Building",
+    slug: "e-commerce",
+    description: "Robust, scalable, and sales-driven online stores tailored to your business needs.",
+    subServices: [
+      "Shopify Development",
+      "WooCommerce",
+      "Custom E-commerce Solutions",
+      "Payment Gateway Integration",
+      "Product Management Systems",
+      "Conversion Rate Optimization",
+    ],
+  },
+  "creative-design": {
+    title: "Creative Design",
+    slug: "creative-design",
+    description: "Visual storytelling that captivates and converts. We blend aesthetics with functionality.",
+    subServices: [
+      "Graphic Design",
+      "Print Design",
+      "Packaging Design",
+      "Company Profile Design",
+      "Motion Graphics",
+      "Illustration",
+    ],
+  },
+  "media-production": {
+    title: "Media Production",
+    slug: "media-production",
+    description: "High-quality production services to bring your brand's narrative to life through video and photography.",
+    subServices: [
+      "Photography",
+      "Video Production",
+      "Video Editing",
+      "Post-Production",
+      "Print Design & Printing Services",
+      "Live Event Coverage",
+    ],
+  },
+  "web-development": {
+    title: "Web Development",
+    slug: "web-development",
+    description: "Cutting-edge websites and web applications built for speed, security, and scalability.",
+    subServices: [
+      "Corporate Websites",
+      "Portfolio Sites",
+      "Web Applications",
+      "CMS Development",
+      "API Integration",
+      "Maintenance & Support",
+    ],
+  },
+};
+
+export const NAV_LINKS = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/#about" },
+  { name: "Expertise", href: "/#services" },
+  { name: "Our Work", href: "/#work" },
+  { name: "Blog", href: "/#blog" },
+  { name: "FAQ", href: "/#faq" },
+  { name: "Contact", href: "/#contact" },
+];

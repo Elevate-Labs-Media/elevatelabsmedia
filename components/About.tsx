@@ -1,55 +1,63 @@
 "use client";
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "framer-motion";
 
-export default function About() {
-    const container = useRef(null);
+const stats = [
+  { value: "500+", label: "Clients Served" },
+  { value: "98%", label: "Success Rate" },
+  { value: "50+", label: "Team Members" },
+  { value: "10+", label: "Years Experience" },
+];
 
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container.current,
-                start: "top 80%",
-            },
-        });
+const About = () => {
+  return (
+    <section className="py-24 px-4 md:px-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            WE ARE THE <br />
+            <span className="text-primary">ARCHITECTS</span> OF <br />
+            THE DIGITAL FUTURE.
+          </h2>
+          <p className="text-xl text-gray-300 mb-6">
+            Elevate Labs is a premium digital agency focused on crafting bespoke
+            digital experiences. We combine strategy, design, and technology to
+            help brands thrive in the modern world.
+          </p>
+          <p className="text-gray-400">
+            From startups to Fortune 500 companies, we have partnered with
+            visionaries to build products that users love and businesses rely
+            on.
+          </p>
+        </motion.div>
 
-        tl.from(".about-title", {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: "power3.out",
-        })
-            .from(".about-text", {
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: "power3.out",
-            }, "-=0.5");
+        <div className="grid grid-cols-2 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+              className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center"
+            >
+              <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {stat.value}
+              </h3>
+              <p className="text-sm font-mono text-gray-400 uppercase tracking-widest">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-    }, { scope: container });
-
-    return (
-        <section id="about" ref={container} className="py-24 px-6 md:px-12 bg-black text-white border-t border-white/10">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 className="about-title text-[8vw] md:text-6xl font-bold uppercase tracking-tighter leading-none mb-8">
-                        Who<br />We Are
-                    </h2>
-                </div>
-                <div className="space-y-8">
-                    <p className="about-text text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
-                        Elevate Labs Media is a forward-thinking digital agency dedicated to transforming brands through innovative strategy and design.
-                    </p>
-                    <p className="about-text text-gray-500 leading-relaxed">
-                        We believe in the power of digital storytelling. Our team of creatives, developers, and strategists work together to build immersive experiences that not only look stunning but drive real, measurable results for our clients. From crafting unique brand identities to developing high-performance websites, we are your partners in digital growth.
-                    </p>
-                </div>
-            </div>
-        </section>
-    );
-}
+export default About;
