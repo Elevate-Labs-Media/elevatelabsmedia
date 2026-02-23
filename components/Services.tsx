@@ -67,15 +67,17 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 md:mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">OUR EXPERTISE</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            OUR SERVICES
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <Link key={index} href={`/services/${service.slug}`}>
+            <Link key={index} href={`/services/${service.slug}`} scroll={false}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}

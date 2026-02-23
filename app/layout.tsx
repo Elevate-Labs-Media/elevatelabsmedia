@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Elevate Labs",
-  description: "Elevate Labs Media",
+  description: "Elevate Your Online Presence",
 };
 
 export default function RootLayout({

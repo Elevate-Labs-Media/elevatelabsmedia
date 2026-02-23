@@ -27,13 +27,15 @@ const Work = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">SELECTED WORK</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">
+            SELECTED WORK
+          </h2>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 md:mb-20">
             A showcase of our recent projects where design meets technology.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}

@@ -19,7 +19,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 leading-tight">
             WE ARE THE <br />
             <span className="text-primary">ARCHITECTS</span> OF <br />
             THE DIGITAL FUTURE.
@@ -36,7 +36,7 @@ const About = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -44,7 +44,7 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
-              className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center"
+              className="p-6 md:p-8 border border-white/10 rounded-2xl bg-white/5 text-center"
             >
               <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
                 {stat.value}

@@ -40,9 +40,9 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Questions? <br />{" "}
             <span className="text-primary">We have answers.</span>
           </h2>

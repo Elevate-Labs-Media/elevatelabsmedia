@@ -40,13 +40,14 @@ export default async function ServiceDetail({
   return (
     <div className="min-h-screen pt-32 pb-20">
       <div className="max-w-7xl mx-auto px-4 md:px-10">
-        <Link
+        {/* <Link
           href="/#services"
+          scroll={false}
           className="inline-flex items-center text-gray-400 hover:text-white mb-10 transition-colors group"
         >
           <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
           Back to Services
-        </Link>
+        </Link> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
           <div>

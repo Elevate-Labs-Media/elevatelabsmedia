@@ -44,14 +44,16 @@ const Blog = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">INSIGHTS</h2>
-          <p className="text-xl text-gray-400 max-w-2xl mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6">
+            INSIGHTS
+          </h2>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 md:mb-20">
             Thoughts, trends, and strategies from the forefront of digital
             innovation in the UAE.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 md:gap-y-16">
           {blogs.map((blog, index) => (
             <motion.div
               key={index}
@@ -69,11 +71,11 @@ const Blog = () => {
                   {blog.date}
                 </span>
               </div>
-              <h3 className="text-3xl font-bold mb-4 group-hover:text-primary transition-colors flex items-start gap-4">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors flex items-start gap-4">
                 {blog.title}
-                <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-1" />
               </h3>
-              <p className="text-gray-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed text-sm md:text-base">
                 {blog.description}
               </p>
             </motion.div>
