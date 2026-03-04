@@ -362,7 +362,7 @@ export default function About() {
                 preserveAspectRatio="xMidYMid slice"
                 width={"100%"}
                 height={"100%"}
-                href="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=1200&auto=format&fit=crop"
+                href="/about-marketing.png"
               ></image>
             </svg>
           </motion.figure>
