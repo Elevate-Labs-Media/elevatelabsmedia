@@ -84,7 +84,7 @@ const Contact = ({ defaultService = "" }: ContactProps) => {
             Message Sent Successfully!
           </h3>
           <p className="text-white">
-            Thank you for contacting us. We'll get back to you shortly.
+            Thank you for contacting us. We&apos;ll get back to you shortly.
           </p>
         </motion.div>
       ) : (

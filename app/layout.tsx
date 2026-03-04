@@ -17,8 +17,66 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elevate Labs",
-  description: "Elevate Your Online Presence",
+  metadataBase: new URL("https://elevatelabs.media"), // Replace with actual production URL
+  title: {
+    default: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    template: "%s | Elevate Labs",
+  },
+  description:
+    "Elevate Labs builds high-performance digital systems and data-driven marketing solutions. Enterprise growth-driven marketing and digital transformation.",
+  keywords: [
+    "digital marketing",
+    "web development",
+    "branding",
+    "e-commerce",
+    "SEO",
+    "Elevate Labs",
+    "media production",
+  ],
+  authors: [{ name: "Elevate Labs Team" }],
+  creator: "Elevate Labs",
+  publisher: "Elevate Labs",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://elevatelabs.media",
+    siteName: "Elevate Labs",
+    title: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    description:
+      "Elevate Your Online Presence with High-Performance Digital Systems.",
+    images: [
+      {
+        url: "/og-image.png", // Ensure this exists or I will create a placeholder task
+        width: 1200,
+        height: 630,
+        alt: "Elevate Labs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    description:
+      "Elevate Your Online Presence with High-Performance Digital Systems.",
+    images: ["/og-image.png"],
+    creator: "@elevatelabs", // If applicable
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

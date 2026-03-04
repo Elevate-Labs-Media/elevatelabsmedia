@@ -12,6 +12,7 @@ import {
 import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 // --- VerticalCutReveal Component ---
 interface TextProps {
@@ -282,9 +283,11 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-white/20 bg-white/10 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors"
               >
-                <img
+                <Image
                   src="https://pro-section.ui-layouts.com/facebook.svg"
-                  alt="fb"
+                  alt="Follow Elevate Labs on Facebook"
+                  width={20}
+                  height={20}
                   className="w-5 h-5"
                 />
               </motion.a>
@@ -299,9 +302,11 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-white/20 bg-white/10 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors"
               >
-                <img
+                <Image
                   src="https://pro-section.ui-layouts.com/instagram.svg"
-                  alt="insta"
+                  alt="Follow Elevate Labs on Instagram"
+                  width={20}
+                  height={20}
                   className="w-5 h-5"
                 />
               </motion.a>
@@ -316,9 +321,11 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="md:w-8 md:h-8 sm:w-6 w-5 sm:h-6 h-5 border border-white/20 bg-white/10 rounded-lg flex items-center justify-center cursor-pointer hover:bg-white/20 transition-colors"
               >
-                <img
+                <Image
                   src="https://pro-section.ui-layouts.com/linkedin.svg"
-                  alt="linkedin"
+                  alt="Follow Elevate Labs on LinkedIn"
+                  width={20}
+                  height={20}
                   className="w-5 h-5"
                 />
               </motion.a>
@@ -410,7 +417,7 @@ export default function About() {
         {/* Main Content */}
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <h1 className="sm:text-4xl md:text-5xl text-2xl !leading-[110%] font-semibold text-white mb-8">
+            <h2 className="sm:text-4xl md:text-5xl text-2xl !leading-[110%] font-semibold text-white mb-8">
               <VerticalCutReveal
                 splitBy="words"
                 staggerDuration={0.1}
@@ -425,7 +432,7 @@ export default function About() {
               >
                 We are the architects of the digital future.
               </VerticalCutReveal>
-            </h1>
+            </h2>
 
             <motion.div
               custom={9}

@@ -19,9 +19,27 @@ export const generateMetadata = async ({
   const service = SERVICES[slug as keyof typeof SERVICES];
   if (!service) return { title: "Service Not Found" };
 
+  const title = `${service.title} | Elevate Labs`;
+  const description = service.description;
+  const url = `https://elevatelabs.media/services/${slug}`;
+
   return {
-    title: `${service.title} | Elevate Labs`,
-    description: service.description,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -21,14 +21,14 @@ const Navigation = () => {
   // We have removed the on-scroll hiding logic so the navbar stays sticky at all times.
   // The layout already uses `fixed top-0` which makes it sticky natively.
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     closed: {
       x: "100%",
       transition: {
         type: "spring",
         stiffness: 400,
         damping: 40,
-      } as any,
+      },
     },
     open: {
       x: "0%",
@@ -36,7 +36,7 @@ const Navigation = () => {
         type: "spring",
         stiffness: 400,
         damping: 40,
-      } as any,
+      },
     },
   };
 

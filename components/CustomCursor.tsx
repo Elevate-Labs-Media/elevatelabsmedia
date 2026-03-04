@@ -23,13 +23,10 @@ export default function CustomCursor() {
     }
 
     let inactivityTimer: NodeJS.Timeout;
-    let isActive = false;
     let currentGrainIndex = 0;
     let lastSpawnTime = 0;
 
     const onMouseMove = (e: MouseEvent) => {
-      isActive = true;
-
       const now = Date.now();
       if (now - lastSpawnTime > 20) {
         // Limit spawn rate
@@ -67,7 +64,7 @@ export default function CustomCursor() {
 
       clearTimeout(inactivityTimer);
       inactivityTimer = setTimeout(() => {
-        isActive = false;
+        // spawn stop timer
       }, 300); // 300ms inactivity means we stop spawning grains
     };
 

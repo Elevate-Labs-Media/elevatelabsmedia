@@ -13,9 +13,11 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">LET'S TALK</h2>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6">
+            LET&apos;S TALK
+          </h2>
           <p className="text-xl text-gray-400">
-            Have a project in mind? We'd love to hear from you.
+            Have a project in mind? We&apos;d love to hear from you.
           </p>
         </motion.div>
       </div>
