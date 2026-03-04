@@ -430,7 +430,7 @@ export default function About() {
                   delay: 1.5,
                 }}
               >
-                We are the architects of the digital future.
+                Crafting the next chapter of digital evolution.
               </VerticalCutReveal>
             </h2>
 
@@ -451,14 +451,15 @@ export default function About() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify mb-4">
-                  Elevate Labs is a premium digital agency focused on crafting
-                  bespoke digital experiences. We combine strategy, design, and
-                  technology to help brands thrive in the modern world.
+                  Elevate Labs is a high-performance digital marketing agency
+                  dedicated to scaling brands in a rapidly changing world. We
+                  focus on results that matter, blending analytical insights
+                  with visionary design.
                 </p>
                 <p className="leading-relaxed text-justify">
-                  From startups to Fortune 500 companies, we have partnered with
-                  visionaries to build products that users love and businesses
-                  rely on.
+                  Our team of specialists works at the intersection of
+                  technology and human connection, ensuring every campaign
+                  resonates and every digital product performs at its peak.
                 </p>
               </motion.div>
               <motion.div

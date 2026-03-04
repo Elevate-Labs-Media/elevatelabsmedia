@@ -24,7 +24,7 @@ const Hero = () => {
 
       // Text scramble for tagline
       tl.to(".hero-tagline", {
-        text: "Enterprise Digital Solutions & Growth-Driven Marketing",
+        text: "Precision Marketing & Creative Excellence",
         duration: 1.5,
         ease: "none",
       });
@@ -108,17 +108,17 @@ const Hero = () => {
         </div>
         <h1 className="hero-title text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.9] mb-6 flex flex-col items-center">
           <div className="overflow-hidden">
-            <span className="hero-title-word inline-block">BUILDING</span>
+            <span className="hero-title-word inline-block">BEYOND DIGITAL</span>
           </div>
           <div className="overflow-hidden">
-            <span className="hero-title-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 pb-2">
-              WHAT’S NEXT.
+            <span className="hero-title-word inline-block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 pb-2 uppercase">
+              BOUNDARIES.
             </span>
           </div>
         </h1>
         <p className="hero-desc text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 px-4 leading-relaxed">
-          We build high-performance digital systems and data-driven marketing
-          solutions.
+          We fuse data-driven precision with creative storytelling to build
+          high-impact marketing strategies and bespoke digital experiences.
         </p>
       </div>
 

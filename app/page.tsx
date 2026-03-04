@@ -2,9 +2,9 @@ import HomeClient from "@/components/HomeClient";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Elevate Labs | Building What's Next in Digital & Marketing",
+  title: "Elevate Labs | Precision Marketing & Creative Excellence",
   description:
-    "We build high-performance digital systems and data-driven marketing solutions. Enterprise digital solutions & growth-driven marketing.",
+    "Elevate Labs is a high-performance digital marketing agency dedicated to scaling brands. We fuse data-driven precision with creative storytelling.",
   alternates: {
     canonical: "/",
   },

@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevatelabs.media"), // Replace with actual production URL
   title: {
-    default: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    default: "Elevate Labs | Precision Marketing & Creative Excellence",
     template: "%s | Elevate Labs",
   },
   description:
-    "Elevate Labs builds high-performance digital systems and data-driven marketing solutions. Enterprise growth-driven marketing and digital transformation.",
+    "Elevate Labs is a high-performance digital marketing agency dedicated to scaling brands. We fuse data-driven precision with creative storytelling.",
   keywords: [
     "digital marketing",
     "web development",

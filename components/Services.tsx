@@ -19,31 +19,31 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 const services = [
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "Branding",
+    title: "Brand Strategy",
     slug: "branding",
     description:
-      "Building resilient brand identities that resonate with your audience.",
+      "Engineered brand identities that cut through the noise and build lasting market authority.",
   },
   {
     icon: <Globe className="w-8 h-8" />,
-    title: "Digital Marketing",
+    title: "Performance Marketing",
     slug: "digital-marketing",
     description:
-      "Data-driven strategies to amplify your brand's voice and maximize ROI.",
+      "Hyper-targeted campaigns driven by deep analytics to maximize customer acquisition and ROI.",
   },
   {
     icon: <PenTool className="w-8 h-8" />,
-    title: "Creative Design",
+    title: "Creative Content",
     slug: "creative-design",
     description:
-      "Visual storytelling that captivates and converts with stunning aesthetics.",
+      "Visual storytelling that transforms passive viewers into loyal brand advocates.",
   },
   {
     icon: <Monitor className="w-8 h-8" />,
-    title: "Media Production",
+    title: "Visual Production",
     slug: "media-production",
     description:
-      "High-quality production services to bring your brand's narrative to life.",
+      "Cinematic media production that brings your brand's vision to life with technical precision.",
   },
   {
     icon: <ShoppingCart className="w-8 h-8" />,
