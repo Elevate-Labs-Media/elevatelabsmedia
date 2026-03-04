@@ -89,7 +89,7 @@ const Navigation = () => {
             variants={menuVariants}
             className="fixed top-0 right-0 w-full sm:w-[40vw] lg:w-[400px] h-screen bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col justify-center px-12"
           >
-            <nav className="flex flex-col gap-6">
+            <nav className="flex pt-5 flex-col gap-6">
               {NAV_LINKS.map((link, i) => (
                 <motion.div key={link.href} custom={i} variants={linkVariants}>
                   <Link
