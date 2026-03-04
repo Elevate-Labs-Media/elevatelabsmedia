@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #050505;
+  --color-background: #1a1b1b;
   --color-foreground: #ffffff;
   
   --font-sans: var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
   
+  /* Background Variants */
+  --bg-dark-1: #000000;
+  --bg-dark-2: #1a1b1b;
+  
   /* Custom Colors */
-  --color-primary: #fff300; /* Vibrant Yellow */
-  --color-primary-glow: rgba(255, 243, 0, 0.15);
-  --color-secondary: #00F0FF; /* Electric Blue */
-  --color-accent: #1a1a1a;
+  --color-primary: #abdd37; /* Neon Green Accent */
+  --color-primary-glow: rgba(171, 221, 55, 0.15);
+  --color-secondary: #e7e8e8; /* Submark Light Grey */
+  --color-accent: #2d2d2d;
   
   /* Glassmorphism Utilities */
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: blur(12px);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(16px);
   
   /* Animation Utilities */
   --animate-float: float 6s ease-in-out infinite;

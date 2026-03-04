@@ -1,17 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP);
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const navRef = useRef<HTMLDivElement>(null);
 
   const toggleOpen = () => setIsOpen(!isOpen);
+
+  // We have removed the on-scroll hiding logic so the navbar stays sticky at all times.
+  // The layout already uses `fixed top-0` which makes it sticky natively.
 
   const menuVariants = {
     closed: {
@@ -45,13 +53,32 @@ const Navigation = () => {
 
   return (
     <>
-      <button
-        onClick={toggleOpen}
-        className="fixed top-6 right-6 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-primary hover:text-black transition-colors"
-        aria-label="Toggle Menu"
+      <header
+        ref={navRef}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isOpen ? "bg-black" : "bg-black/50 backdrop-blur-md"
+        } text-white px-4 md:px-10 py-6`}
       >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
+        <div className="max-w-7xl mx-auto flex justify-between items-center relative">
+          <Link href="/" className="pointer-events-auto z-50">
+            <Image
+              src="/logo.png"
+              alt="Elevate Labs Media Logo"
+              width={180}
+              height={60}
+              className="w-auto h-12 lg:pl-10 object-contain"
+              priority
+            />
+          </Link>
+          <button
+            onClick={toggleOpen}
+            className="pointer-events-auto z-50 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-primary hover:text-black transition-colors"
+            aria-label="Toggle Menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
 
       <AnimatePresence>
         {isOpen && (
@@ -60,7 +87,7 @@ const Navigation = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed top-0 right-0 w-full md:w-[400px] h-screen bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col justify-center px-12"
+            className="fixed top-0 right-0 w-full sm:w-[40vw] lg:w-[400px] h-screen bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col justify-center px-12"
           >
             <nav className="flex flex-col gap-6">
               {NAV_LINKS.map((link, i) => (
@@ -86,7 +113,7 @@ const Navigation = () => {
             >
               <p className="text-gray-400 mb-2">Get in touch</p>
               <a
-                href="mailto:hello@elevatelabs.com"
+                href="mailto:elevatelabsmedia@gmail.com"
                 className="text-xl text-white hover:text-primary transition-colors"
               >
                 hello@elevatelabs.com

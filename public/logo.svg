@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-5 {
+        fill: #e6e6e5;
+        font-family: MenorRegular, Menor;
+        font-size: 166.72px;
+      }
+
+      .cls-6 {
+        fill: #aacf37;
+      }
+    </style>
+  </defs>
+  <text class="cls-5" transform="translate(402.16 528.78)"><tspan x="0" y="0">El</tspan><tspan class="cls-1" x="124.54" y="0">e</tspan><tspan class="cls-3" x="215.07" y="0">v</tspan><tspan class="cls-4" x="296.77" y="0">a</tspan><tspan class="cls-2" x="382.3" y="0">t</tspan><tspan x="428.98" y="0">e </tspan></text>
+  <text class="cls-5" transform="translate(406.08 658.93)"><tspan x="0" y="0">Labs.</tspan></text>
+  <rect class="cls-6" x="105.65" y="529" width="69.79" height="83" rx="1.59" ry="1.59"/>
+  <rect class="cls-6" x="175.44" y="607.64" width="201.65" height="63.98" rx="6.62" ry="6.62"/>
+  <path class="cls-6" d="M370.47,472.34h-143.43c-5.9,0-8.85,7.13-4.68,11.31l27.39,27.37c1.24,1.24,2.93,1.94,4.68,1.94h116.04c3.66,0,6.62,2.96,6.62,6.62v50.71c0,3.66-2.96,6.62-6.62,6.62h-140.86c-1.76,0-3.44-.7-4.68-1.94l-49.48-49.5v-.83h-.83l-11.68-11.68-55.34-55.34c-1.24-1.24-1.94-2.93-1.94-4.68v-37.93c0-3.66,2.96-6.62,6.62-6.62h258.2c3.66,0,6.62,2.96,6.62,6.62v50.71c0,3.66-2.96,6.62-6.62,6.62Z"/>
+</svg>

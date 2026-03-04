@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import LenisScroll from "@/components/LenisScroll";
 import Navigation from "@/components/Navigation";
+import CustomCursor from "@/components/CustomCursor";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
+        <CustomCursor />
         <Navigation />
         <LenisScroll>{children}</LenisScroll>
+        <WhatsAppButton />
       </body>
     </html>
   );
