@@ -134,10 +134,10 @@ const Hero = () => {
           <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full" />
         </Link>
         <Link
-          href="/#about"
+          href="/#work"
           className="magnetic-btn px-8 py-4 border border-white/20 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm text-center"
         >
-          About Us
+          Our Work
         </Link>
       </div>
     </section>

@@ -80,13 +80,11 @@ const Footer = () => {
           <h3 className="text-white font-bold mb-6 text-lg">Our Expertise</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
             {Object.entries(SERVICES).map(([slug, service]) => (
-              <div key={slug}>
-                <Link
-                  href={`/services/${slug}`}
-                  className="block text-gray-400 hover:text-primary transition-colors"
-                >
-                  {service.title}
-                </Link>
+              <div
+                key={slug}
+                className="text-gray-400 hover:text-primary transition-colors cursor-default"
+              >
+                {service.title}
               </div>
             ))}
           </div>

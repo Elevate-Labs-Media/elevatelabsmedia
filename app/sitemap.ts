@@ -1,4 +1,3 @@
-import { SERVICES } from "@/lib/constants";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,13 +11,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : 0.8,
   }));
 
-  // Dynamic service routes
-  const serviceRoutes = Object.keys(SERVICES).map((slug) => ({
-    url: `${baseUrl}/services/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [...routes, ...serviceRoutes];
+  return [...routes];
 }
