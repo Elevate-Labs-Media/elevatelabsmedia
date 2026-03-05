@@ -250,7 +250,7 @@ const Work = () => {
           >
             <motion.div
               ref={gridRef}
-              className="grid auto-cols-[minmax(18rem,1fr)] grid-flow-col gap-6 px-4 md:px-10"
+              className="grid auto-cols-[16rem] md:auto-cols-[22rem] grid-flow-col gap-4 md:gap-8 px-4 md:px-10"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -261,7 +261,7 @@ const Work = () => {
                   key={item.id}
                   variants={itemVariants}
                   className={cn(
-                    "group relative flex h-[25rem] min-w-[20rem] cursor-pointer items-end overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-primary/50",
+                    "group relative flex h-[22rem] md:h-[30rem] w-[16rem] md:w-full cursor-pointer items-end overflow-hidden rounded-2xl md:rounded-[2.5rem] border border-white/10 bg-white/5 p-6 transition-all duration-500 hover:border-primary/50",
                     item.span,
                   )}
                   whileHover={{ scale: 0.98 }}

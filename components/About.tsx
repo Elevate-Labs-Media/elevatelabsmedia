@@ -341,10 +341,10 @@ export default function About() {
             className="relative group pt-10"
           >
             <svg
-              className="w-full"
+              className="w-full shadow-2xl rounded-[2.5rem] overflow-hidden"
               width={"100%"}
               height={"100%"}
-              viewBox="0 0 100 40"
+              viewBox="0 0 100 56"
             >
               <defs>
                 <clipPath
@@ -362,7 +362,7 @@ export default function About() {
                 preserveAspectRatio="xMidYMid slice"
                 width={"100%"}
                 height={"100%"}
-                href="/about-marketing.png"
+                href="/images/about-us.png"
               ></image>
             </svg>
           </motion.figure>
@@ -451,10 +451,11 @@ export default function About() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify mb-4">
-                  Elevate Labs is a high-performance digital marketing agency
-                  dedicated to scaling brands in a rapidly changing world. We
-                  focus on results that matter, blending analytical insights
-                  with visionary design.
+                  Elevate Labs is a premier performance marketing agency
+                  specializing in data-driven digital strategy and brand
+                  transformation. We empower businesses to dominate their market
+                  through analytical precision and innovative design solutions
+                  that scale with the speed of culture.
                 </p>
                 <p className="leading-relaxed text-justify">
                   Our team of specialists works at the intersection of
@@ -471,9 +472,10 @@ export default function About() {
                 className="sm:text-base text-xs"
               >
                 <p className="leading-relaxed text-justify mb-8">
-                  Every brand has a story, and we specialize in telling yours
-                  with clarity and impact. By blending creativity with strategy,
-                  we create digital presences that resonate with audiences.
+                  Elevate your brand with data-driven performance marketing and
+                  high-impact visual storytelling. We specialize in building
+                  authoritative brand identities and strategic digital presences
+                  that drive measurable growth and deep audience engagement.
                 </p>
                 <div className="flex">
                   {/* Kept Company Profile link from original code */}

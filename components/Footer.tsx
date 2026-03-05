@@ -13,13 +13,13 @@ const Footer = () => {
             Building the digital future with innovation, strategy, and design.
           </p>
           <div className="flex gap-4">
-            <a
+            {/* <a
               href="#"
               aria-label="Twitter"
               className="text-white hover:text-primary transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
             >
               <Twitter size={20} />
-            </a>
+            </a> */}
             <a
               href="#"
               aria-label="LinkedIn"
@@ -92,7 +92,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="max-w-7xl mx-auto px-4 md:px-10 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      {/* <div className="max-w-7xl mx-auto px-4 md:px-10 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
         <p>
           &copy; {new Date().getFullYear()} Elevate Labs. All rights reserved.
         </p>
@@ -104,7 +104,7 @@ const Footer = () => {
             Terms of Service
           </Link>
         </div>
-      </div>
+      </div> */}
     </footer>
   );
 };
