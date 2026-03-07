@@ -13,22 +13,39 @@ const Footer = () => {
             Building the digital future with innovation, strategy, and design.
           </p>
           <div className="flex gap-4">
-            {/* <a
-              href="#"
-              aria-label="Twitter"
+            <a
+              href="https://www.facebook.com/share/1butHop65C/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
               className="text-white hover:text-primary transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
             >
-              <Twitter size={20} />
-            </a> */}
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/company/elevatelabsmedia"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="text-white hover:text-primary transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
             >
               <Linkedin size={20} />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/elevatelabsmedia?igsh=cmR1bHVqOWVmempk"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
               className="text-white hover:text-primary transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
             >
