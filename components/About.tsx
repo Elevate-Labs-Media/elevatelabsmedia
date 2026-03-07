@@ -134,7 +134,7 @@ export default function About() {
               viewport={{ once: true }}
               variants={revealVariants}
               custom={0}
-              className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight text-center w-full whitespace-nowrap"
+              className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight text-center w-full whitespace-normal md:whitespace-nowrap"
             >
               Digital Marketing. Strategic Storytelling.
             </motion.h2>
