@@ -192,7 +192,7 @@ export default function About() {
                 viewport={{ once: true }}
                 variants={revealVariants}
                 custom={4}
-                className="pt-4"
+                className="pt-8 flex justify-center w-full"
               >
                 <a
                   href="/elevate-labs-profile.pdf"

@@ -34,7 +34,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/company/elevatelabsmedia"
+              href="https://www.linkedin.com/company/elevate-labs-media/about/?viewAsMember=true"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -52,7 +52,7 @@ const Footer = () => {
               <Instagram size={20} />
             </a>
             <a
-              href="mailto:hello@elevatelabs.com"
+              href="mailto:elevatelabsmedia@gmail.com"
               aria-label="Email"
               className="text-white hover:text-primary transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
             >
@@ -96,14 +96,31 @@ const Footer = () => {
         <div className="lg:col-span-2">
           <h3 className="text-white font-bold mb-6 text-lg">Our Expertise</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-            {Object.entries(SERVICES).map(([slug, service]) => (
-              <div
-                key={slug}
-                className="text-gray-400 hover:text-primary transition-colors cursor-default"
-              >
-                {service.title}
-              </div>
-            ))}
+            {Object.entries(SERVICES).map(([slug, service]) =>
+              [
+                "digital-marketing",
+                "branding",
+                "creative-design",
+                "media-production",
+                "e-commerce",
+                "seo-optimization",
+              ].includes(slug) ? (
+                <Link
+                  key={slug}
+                  href={`/${slug}`}
+                  className="text-gray-400 hover:text-primary transition-colors"
+                >
+                  {service.title}
+                </Link>
+              ) : (
+                <div
+                  key={slug}
+                  className="text-gray-400 hover:text-primary transition-colors cursor-default"
+                >
+                  {service.title}
+                </div>
+              ),
+            )}
           </div>
         </div>
       </div>

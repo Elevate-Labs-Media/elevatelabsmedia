@@ -90,8 +90,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <CustomCursor />
-        <Navigation />
         <LenisScroll>{children}</LenisScroll>
+        <Navigation />
         <WhatsAppButton />
       </body>
     </html>

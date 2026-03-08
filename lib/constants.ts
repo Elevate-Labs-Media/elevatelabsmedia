@@ -51,16 +51,15 @@ export const SERVICES = {
     ],
   },
   "e-commerce": {
-    title: "E-Commerce Development",
+    title: "Web & Mobile Development",
     slug: "e-commerce",
-    description: "Robust, scalable, and sales-driven online stores tailored to your business needs.",
+    description: "High-performance digital solutions ranging from premium Shopify storefronts to complex custom web and mobile applications.",
     subServices: [
       "Shopify Development",
-      "WooCommerce",
-      "Custom E-commerce Solutions",
-      "Payment Gateway Integration",
-      "Product Management Systems",
-      "Conversion Rate Optimization",
+      "Custom Web Development",
+      "Mobile App Development",
+      "UI/UX Design for Development",
+      "API Integration & Backend",
     ],
   },
   "seo-optimization": {
