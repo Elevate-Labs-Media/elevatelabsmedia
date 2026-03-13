@@ -57,7 +57,18 @@ const Navigation = () => {
         } text-white px-4 md:px-10 py-6`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center relative">
-          <Link href="/" className="pointer-events-auto z-50">
+          <Link
+            href="/#hero"
+            className="pointer-events-auto z-50 flex items-center"
+            onClick={(e) => {
+              setIsOpen(false);
+              // If we're already on the home page, we want a smooth scroll to top
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <Image
               src="/logo.png"
               alt="Elevate Labs Media Logo"
@@ -91,7 +102,18 @@ const Navigation = () => {
                 <motion.div key={link.href} custom={i} variants={linkVariants}>
                   <Link
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      setIsOpen(false);
+                      // Custom smooth scroll handling for hash links on the same page
+                      if (link.href.startsWith("/#") && pathname === "/") {
+                        const targetId = link.href.substring(2);
+                        const element = document.getElementById(targetId);
+                        if (element) {
+                          e.preventDefault();
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }
+                    }}
                     className={`text-3xl md:text-5xl font-bold hover:text-primary transition-colors ${
                       pathname === link.href ? "text-primary" : "text-white"
                     }`}
@@ -101,21 +123,6 @@ const Navigation = () => {
                 </motion.div>
               ))}
             </nav>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-12 pt-12 border-t border-white/10"
-            >
-              <p className="text-gray-400 mb-2">Get in touch</p>
-              <a
-                href="mailto:elevatelabsmedia@gmail.com"
-                className="text-xl text-white hover:text-primary transition-colors"
-              >
-                info@elevatelabsmedia.ae
-              </a>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

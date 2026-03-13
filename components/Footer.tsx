@@ -8,10 +8,14 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Brand Column */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-6">Elevate Labs</h2>
-          <p className="mb-6 leading-relaxed">
-            Building the digital future with innovation, strategy, and design.
-          </p>
+          <Link href="/" className="group block">
+            <h2 className="text-2xl font-bold text-white mb-6 group-hover:text-primary transition-colors">
+              Elevate Labs
+            </h2>
+            <p className="mb-6 leading-relaxed group-hover:text-gray-300 transition-colors">
+              Lab in land for your rising brand.
+            </p>
+          </Link>
           <div className="flex gap-4">
             <a
               href="https://www.facebook.com/share/1butHop65C/?mibextid=wwXIfr"

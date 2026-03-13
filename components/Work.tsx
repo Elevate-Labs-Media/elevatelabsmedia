@@ -195,8 +195,9 @@ const Work = () => {
 
   return (
     <section
+      id="work"
       ref={targetRef}
-      className="relative w-full overflow-hidden py-12 md:py-20"
+      className="relative w-full overflow-hidden py-12 md:py-20 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-4 md:px-10 mb-12 md:mb-16 text-center">
         <motion.div

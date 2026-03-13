@@ -76,11 +76,11 @@ export const SERVICES = {
 
 export const NAV_LINKS = [
   { name: "Home", href: "/" },
+  { name: "Services", href: "/#services" },
+  { name: "Works", href: "/#work" },
   { name: "About Us", href: "/#about" },
-  { name: "Expertise", href: "/#services" },
-  { name: "Our Work", href: "/#work" },
-  { name: "Blog", href: "/#blog" },
   { name: "FAQ", href: "/#faq" },
+  { name: "Blogs", href: "/#blog" },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact Us", href: "/#contact" },
 ];

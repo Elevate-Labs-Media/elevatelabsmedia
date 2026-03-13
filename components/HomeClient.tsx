@@ -52,23 +52,23 @@ export default function HomeClient() {
         <section id="hero" className="bg-dark-1">
           <Hero />
         </section>
-        <section id="services" className="bg-dark-2 gsap-section">
+        <section className="bg-dark-2 gsap-section">
           <Services />
         </section>
-        <section id="work" className="bg-dark-1 gsap-section">
+        <section className="bg-dark-1 gsap-section">
           <Work />
         </section>
-        <section id="about" className="bg-dark-1 gsap-section">
+        <section className="bg-dark-1 gsap-section">
           <About />
         </section>
-       <section id="faq" className="bg-dark-2 gsap-section">
+        <section className="bg-dark-2 gsap-section">
           <FAQ />
         </section>
-        <section id="blog" className="bg-dark-1 gsap-section">
+        <section className="bg-dark-1 gsap-section">
           <Blog />
         </section>
-        
-        <section id="contact" className="bg-dark-1 gsap-section">
+
+        <section className="bg-dark-1 gsap-section">
           <ContactSection />
         </section>
         <Footer />

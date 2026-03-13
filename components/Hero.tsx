@@ -68,8 +68,6 @@ const Hero = () => {
         },
         "-=0.5",
       );
-
-
     },
     { scope: container, dependencies: [] },
   );
@@ -105,7 +103,7 @@ const Hero = () => {
           href="/#contact"
           className="group flex px-8 py-4 bg-primary text-black font-bold text-lg rounded-full hover:bg-white transition-colors duration-300 text-center items-center justify-center gap-2"
         >
-          CRAFT THE FUTURE
+          START A PROJECT
           <ArrowRight className="w-5 h-5" />
         </Link>
         <Link

@@ -21,17 +21,29 @@ const AccordionItem = ({
     <div className="border-b border-white/10">
       <button
         onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left group"
+        className="w-full py-5 md:py-8 flex items-center justify-between text-left group gap-4"
       >
         <span
-          className={`text-xl font-medium transition-colors ${isOpen ? "text-primary" : "text-white group-hover:text-primary"}`}
+          className={`text-lg md:text-2xl font-bold transition-colors leading-tight ${
+            isOpen
+              ? "text-primary placeholder-green-400"
+              : "text-white group-hover:text-primary"
+          }`}
         >
           {question}
         </span>
         <span
-          className={`p-2 rounded-full border transition-all ${isOpen ? "border-primary text-primary rotate-180" : "border-white/20 text-white group-hover:border-primary group-hover:text-primary"}`}
+          className={`p-2 rounded-full border shrink-0 transition-all ${
+            isOpen
+              ? "border-primary text-primary rotate-180 bg-primary/10"
+              : "border-white/20 text-white group-hover:border-primary group-hover:text-primary"
+          }`}
         >
-          {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+          {isOpen ? (
+            <Minus size={18} className="md:w-6 md:h-6" />
+          ) : (
+            <Plus size={18} className="md:w-6 md:h-6" />
+          )}
         </span>
       </button>
       <AnimatePresence>
@@ -40,10 +52,12 @@ const AccordionItem = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-6 text-gray-400 leading-relaxed">{answer}</p>
+            <p className="pb-8 text-gray-400 leading-relaxed text-sm md:text-lg max-w-2xl">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

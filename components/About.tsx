@@ -26,7 +26,11 @@ export default function About() {
   };
 
   return (
-    <section className="py-16 md:py-28 px-4" id="about" ref={heroRef}>
+    <section
+      className="py-16 md:py-28 px-4 scroll-mt-24"
+      id="about"
+      ref={heroRef}
+    >
       <div className="max-w-7xl px-6 md:px-12 mx-auto">
         <div className="relative mb-16">
           {/* Header with social icons */}

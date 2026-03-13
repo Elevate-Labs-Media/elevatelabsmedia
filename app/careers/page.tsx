@@ -138,9 +138,9 @@ const CareersPage = () => {
 
   return (
     <>
-      <main className="bg-background text-white min-h-screen pt-24 pb-20 relative z-10">
+      <main className="bg-background text-white min-h-screen pt-20 pb-20 relative z-10 overflow-x-hidden">
         {/* 1. Hero Section */}
-        <section className="relative px-4 md:px-10 py-20 md:py-32 overflow-hidden z-10">
+        <section className="relative px-6 md:px-10 py-8 md:py-32 overflow-hidden z-10 flex flex-col items-center justify-center">
           <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-full max-w-4xl h-[600px] bg-[radial-gradient(ellipse_at_center,_rgba(171,221,55,0.15)_0%,_transparent_70%)] rounded-full -z-10 pointer-events-none" />
           <div className="max-w-7xl mx-auto text-center">
             <motion.span
@@ -160,7 +160,7 @@ const CareersPage = () => {
               }}
               initial="hidden"
               animate="visible"
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 leading-[1.1] tracking-tighter flex flex-wrap justify-center gap-x-2 md:gap-x-4 max-w-5xl mx-auto"
+              className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 leading-[1.3] md:leading-[1.1] tracking-tighter flex flex-wrap justify-center gap-x-1.5 sm:gap-x-2 md:gap-x-4 max-w-5xl mx-auto px-4"
             >
               {[
                 "Are you",
@@ -219,22 +219,22 @@ const CareersPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="px-4 md:px-10 py-20 md:py-32 bg-black border-y border-white/10"
+          className="px-6 md:px-10 py-20 md:py-32 bg-black border-y border-white/10"
         >
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <motion.h2
                   variants={headingVariants}
-                  className="text-3xl md:text-5xl font-black mb-6 md:mb-8 leading-tight tracking-tighter"
+                  className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 md:mb-8 leading-tight tracking-tighter"
                 >
                   Digital Marketing Jobs <br />
-                  <span className="text-primary">
+                  <span className="text-primary text-xl sm:text-2xl md:text-5xl leading-tight inline-block">
                     Where Creativity Meets Performance
                   </span>
                 </motion.h2>
@@ -272,8 +272,8 @@ const CareersPage = () => {
                 </div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   duration: 0.8,
@@ -471,7 +471,7 @@ const CareersPage = () => {
           </div>
         </section>
         {/* 6. Application CTA */}
-        <section id="contact" className="px-4 md:px-10 py-20 md:py-32">
+        <section className="px-4 md:px-10 py-20 md:py-32">
           <div className="max-w-3xl mx-auto">
             <motion.div
               variants={scrollVariants}
