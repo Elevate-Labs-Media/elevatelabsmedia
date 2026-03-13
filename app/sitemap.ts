@@ -1,15 +1,33 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://elevatelabs.media";
+export const dynamic = "force-static";
 
-  // Static routes
-  const routes = ["", "/blog", "/contact", "/faq", "/work"].map((route) => ({
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://elevatelabsmedia.ae";
+
+  const routes = [
+    "",
+    "/services",
+    "/about",
+    "/contact",
+    "/work",
+    "/blog",
+    "/careers",
+    "/faq",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/branding",
+    "/digital-marketing",
+    "/creative-design",
+    "/media-production",
+    "/e-commerce",
+    "/seo-optimization",
+  ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
+    changeFrequency: "monthly" as const,
     priority: route === "" ? 1 : 0.8,
   }));
 
-  return [...routes];
+  return routes;
 }
