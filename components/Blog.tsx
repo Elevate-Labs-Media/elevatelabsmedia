@@ -5,32 +5,32 @@ import { ArrowUpRight } from "lucide-react";
 
 const blogs = [
   {
-    title: "Navigating the 2026 UAE Advertiser Permit for Creators",
-    category: "Influencer Marketing",
+    title: "Why We're the Best Marketing Agency in UAE for 2026",
+    category: "Agency Excellence",
     date: "March 5, 2026",
     description:
-      "A complete guide to the new UAE Media Council regulations and how brands must adapt their digital influencer strategies to stay compliant.",
+      "Discover how our data-driven strategies and creative excellence make us the top choice for brands looking to dominate the UAE market across Dubai and Abu Dhabi.",
   },
   {
-    title: "Dubai's Emergence as the Global B2B Brands Hub",
+    title: "Digital Transformation in Abu Dhabi: A Strategic Guide",
     category: "Market Expansion",
     date: "Feb 28, 2026",
     description:
-      "Why international tech and fintech companies are aggressively expanding their digital footprint and branding efforts into the UAE.",
+      "From web development to performance marketing, see how we're helping Abu Dhabi-based businesses scale their digital presence with precision and localized expertise.",
   },
   {
-    title: "Hyper-Personalized Branding: The New Standard in the UAE",
-    category: "Branding",
+    title: "Creative Photography in UAE: Capturing Brand Excellence",
+    category: "Media Production",
     date: "Feb 15, 2026",
     description:
-      "How AI-driven audience insights are helping top UAE brands move strictly beyond generic messaging to craft highly targeted visual identities.",
+      "Cinematic photography and visual storytelling that sets Dubai and Abu Dhabi brands apart. Learn why visual quality is the new standard for the best marketing agency in UAE.",
   },
   {
-    title: "The Dominance of Short-Form Video in Middle East SEO",
-    category: "SEO & Content",
+    title: "The Future of Web Development and SEO in Dubai",
+    category: "Tech & SEO",
     date: "Jan 30, 2026",
     description:
-      "Video isn't just for engagement anymore. Discover how optimizing reels and short-form video content is dominating search engine rankings in the UAE.",
+      "High-performance websites and technical SEO strategies tailored for the competitive Dubai market. How the best marketing agency UAE stays ahead of the digital curve.",
   },
 ];
 
@@ -65,20 +65,21 @@ const Blog = () => {
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16 md:mb-24"
+          className="mb-16 md:mb-24 text-center flex flex-col items-center"
         >
-          <div className="flex items-center gap-2 text-xl mb-6">
+          <div className="flex items-center justify-center gap-2 text-xl mb-6">
             <span className="text-primary animate-spin">✱</span>
             <span className="text-sm font-semibold tracking-wider text-gray-400 uppercase">
               Latest Insights
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05]">
-            Our <span className="text-primary italic">Journal</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05] uppercase">
+            Insights? <br />
+            <span className="text-primary">Our Journal.</span>
           </h2>
-          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed">
-            Thoughts, trends, and strategies from the forefront of digital
-            innovation in the UAE.
+          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed mx-auto">
+            Insights from the best marketing agency in UAE. Exploring digital
+            innovation and growth strategies across Dubai and Abu Dhabi.
           </p>
         </motion.div>
 

@@ -5,14 +5,24 @@ import Footer from "@/components/Footer";
 
 const services = [
   {
-    title: "Print Design & Printing Services",
+    title: "Photography",
     description:
-      "Transforming digital concepts into premium physical assets. We provide high-end business publications and large-scale digital/offset printing solutions.\n> Indoor & Outdoor Branding & Signage\n> Premium Corporate Promotional Gifts\n> High-Volume Flyers & Brand Brochures\n> Custom Trophies & Corporate Medals\n> Eco-Friendly Branded Paper Bags",
+      "Capture stunning, high-resolution images that tell your brand's story and make a lasting impact.",
   },
   {
-    title: "Live Event & Broadcast Coverage",
+    title: "Video Production",
     description:
-      "Experience seamless, professional broadcast-quality coverage for your most important events. We deploy multi-camera setups, professional audio engineering, and reliable live-streaming infrastructure to capture every moment in real-time. From virtual conferences to large-scale corporate summits, we provide high-definition output with instant social media highlights for a truly immersive audience experience.",
+      "Create compelling video content—from concept development to filming and editing—for any platform or purpose.",
+  },
+  {
+    title: "Video Editing",
+    description:
+      "Transform raw footage into polished, engaging videos with professional editing, effects, transitions, and color correction.",
+  },
+  {
+    title: "Post-Production",
+    description:
+      "Polish your content with expert editing, color correction, sound mixing, and final touches to achieve the highest quality.",
   },
 ];
 

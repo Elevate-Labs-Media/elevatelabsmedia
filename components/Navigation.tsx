@@ -84,9 +84,9 @@ const Navigation = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed top-0 right-0 w-full sm:w-[40vw] lg:w-[400px] h-screen bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col justify-center px-12"
+            className="fixed top-0 right-0 w-full sm:w-[40vw] lg:w-[400px] h-[100dvh] bg-black/95 backdrop-blur-xl z-40 border-l border-white/10 flex flex-col px-12 pt-[120px] pb-12 overflow-y-auto"
           >
-            <nav className="flex pt-5 flex-col gap-6">
+            <nav className="flex flex-col gap-6 mt-auto mb-auto">
               {NAV_LINKS.map((link, i) => (
                 <motion.div key={link.href} custom={i} variants={linkVariants}>
                   <Link
@@ -113,7 +113,7 @@ const Navigation = () => {
                 href="mailto:elevatelabsmedia@gmail.com"
                 className="text-xl text-white hover:text-primary transition-colors"
               >
-                hello@elevatelabs.com
+                info@elevatelabsmedia.ae
               </a>
             </motion.div>
           </motion.div>

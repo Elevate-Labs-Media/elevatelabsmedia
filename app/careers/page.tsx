@@ -160,20 +160,27 @@ const CareersPage = () => {
               }}
               initial="hidden"
               animate="visible"
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 md:mb-8 leading-[1.05] tracking-tighter flex flex-wrap justify-center gap-x-2 md:gap-x-4"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8 leading-[1.1] tracking-tighter flex flex-wrap justify-center gap-x-2 md:gap-x-4 max-w-5xl mx-auto"
             >
-              <motion.span variants={headingVariants} className="inline-block">
-                Join
-              </motion.span>
-              <motion.span variants={headingVariants} className="inline-block">
-                Our
-              </motion.span>
-              <motion.span
-                variants={headingVariants}
-                className="inline-block text-primary italic"
-              >
-                Team
-              </motion.span>
+              {[
+                "Are you",
+                "passionate",
+                "about",
+                "helping",
+                "brands",
+                "grow",
+                "with",
+                "creative",
+                "strategies?",
+              ].map((word, i) => (
+                <motion.span
+                  key={i}
+                  variants={headingVariants}
+                  className={`inline-block ${word.toLowerCase() === "passionate" ? "text-primary italic" : ""}`}
+                >
+                  {word}
+                </motion.span>
+              ))}
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -185,9 +192,7 @@ const CareersPage = () => {
               }}
               className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed"
             >
-              Build the future of digital creativity with Elevate Labs. We're a
-              fast-growing creative and digital marketing agency helping brands
-              grow through strategy, design, content, and performance marketing.
+              Join us in becoming a changemaker for brands.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.95 }}

@@ -40,26 +40,23 @@ export const SERVICES = {
   "media-production": {
     title: "Media Production",
     slug: "media-production",
-    description: "High-quality production services to bring your brand's narrative to life through video and photography.",
+    description: "We deliver high-quality visual storytelling through video, photography, and audio to engage, inform, and inspire your audience.",
     subServices: [
       "Photography",
       "Video Production",
       "Video Editing",
       "Post-Production",
-      "Live Event Coverage",
-      "Drone Cinematography",
     ],
   },
   "e-commerce": {
-    title: "Web & Mobile Development",
+    title: "Web & App Development",
     slug: "e-commerce",
-    description: "High-performance digital solutions ranging from premium Shopify storefronts to complex custom web and mobile applications.",
+    description: "We build modern, high-performance digital solutions including websites, mobile applications, and e-commerce platforms.",
     subServices: [
-      "Shopify Development",
-      "Custom Web Development",
+      "Website Development",
+      "E-commerce Solutions",
       "Mobile App Development",
-      "UI/UX Design for Development",
-      "API Integration & Backend",
+      "Maintenance & Support",
     ],
   },
   "seo-optimization": {

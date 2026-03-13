@@ -8,24 +8,13 @@ interface ContactProps {
   defaultService?: string;
 }
 
-/**
- * EMAILJS SETUP GUIDE:
- * 1. Visit https://www.emailjs.com/ and create an account.
- * 2. In 'Email Services', add your provider (e.g., Gmail) and copy the 'Service ID'.
- * 3. In 'Email Templates', create a new template and copy the 'Template ID'.
- * 4. In 'Account' -> 'API Keys', copy your 'Public Key'.
- * 5. Paste these values into your '.env.local' file or directly below.
- */
 const Contact = ({ defaultService = "" }: ContactProps) => {
-  // --- CONFIGURATION ---
-  // If you are using .env.local, these will load automatically.
-  // Otherwise, you can replace these strings with your actual IDs.
   const SERVICE_ID =
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_kcpyfja";
   const TEMPLATE_ID =
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_bv2e4h8";
   const PUBLIC_KEY =
-    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "VB8j2z5iDb_Fj3Da2";
 
   const [formState, setFormState] = useState({
     name: "",
@@ -95,8 +84,14 @@ const Contact = ({ defaultService = "" }: ContactProps) => {
               animate={{ opacity: 1 }}
               className="p-4 bg-red-500/10 border border-red-500 text-red-500 text-center rounded-lg"
             >
-              Something went wrong. Please check your EmailJS configuration or
-              try again.
+              Something went wrong. Please contact us directly through our mail
+              at{" "}
+              <a
+                href="mailto:info@elevatelabsmedia.ae"
+                className="text-white hover:underline font-bold"
+              >
+                info@elevatelabsmedia.ae
+              </a>
             </motion.div>
           )}
           {/* Name + Email */}
@@ -142,7 +137,7 @@ const Contact = ({ defaultService = "" }: ContactProps) => {
             <input
               type="text"
               className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:outline-none transition-colors"
-              placeholder="Web Development, SEO..."
+              placeholder="Creative Design, Media Production, Web Development. "
               value={formState.service}
               onChange={(e) =>
                 setFormState({ ...formState, service: e.target.value })

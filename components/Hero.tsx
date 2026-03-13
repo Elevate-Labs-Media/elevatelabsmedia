@@ -69,30 +69,7 @@ const Hero = () => {
         "-=0.5",
       );
 
-      // Magnetic effect on buttons
-      const buttons = gsap.utils.toArray<HTMLElement>(".magnetic-btn");
-      buttons.forEach((btn) => {
-        btn.addEventListener("mousemove", (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-          gsap.to(btn, {
-            x: x * 0.4,
-            y: y * 0.4,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
 
-        btn.addEventListener("mouseleave", () => {
-          gsap.to(btn, {
-            x: 0,
-            y: 0,
-            duration: 0.5,
-            ease: "elastic.out(1, 0.3)",
-          });
-        });
-      });
     },
     { scope: container, dependencies: [] },
   );
@@ -117,27 +94,25 @@ const Hero = () => {
           </div>
         </h1>
         <p className="hero-desc text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 px-4 leading-relaxed">
-          We fuse data-driven precision with creative storytelling to build
-          high-impact marketing strategies and bespoke digital experiences.
+          Transforming brands through immersive storytelling and high-impact
+          brand activations. Your premier partner for experiential events and
+          creative excellence.
         </p>
       </div>
 
       <div className="hero-buttons flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-6 sm:px-0">
         <Link
-          href="/contact"
-          className="magnetic-btn group relative px-8 py-4 bg-primary text-black font-bold text-lg rounded-full transition-transform text-center"
+          href="/#contact"
+          className="group flex px-8 py-4 bg-primary text-black font-bold text-lg rounded-full hover:bg-white transition-colors duration-300 text-center items-center justify-center gap-2"
         >
-          <span className="relative z-10 flex items-center justify-center gap-2">
-            START A PROJECT{" "}
-            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </span>
-          <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-full" />
+          CRAFT THE FUTURE
+          <ArrowRight className="w-5 h-5" />
         </Link>
         <Link
           href="/#work"
-          className="magnetic-btn px-8 py-4 border border-white/20 text-white font-bold text-lg rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm text-center"
+          className="flex px-8 py-4 border border-white/20 text-white font-bold text-lg rounded-full hover:bg-white hover:text-black transition-colors duration-300 backdrop-blur-sm text-center items-center justify-center"
         >
-          Our Work
+          SEE THE IMPACT
         </Link>
       </div>
     </section>

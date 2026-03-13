@@ -5,34 +5,24 @@ import Footer from "@/components/Footer";
 
 const services = [
   {
-    title: "Premium Shopify Development",
+    title: "Website Development",
     description:
-      "Design and deployment of high-conversion Shopify storefronts. We build bespoke themes and integrate complex app ecosystems, ensuring your e-commerce platform is both aesthetically stunning and technically superior.",
+      "Design and develop responsive, fast, and SEO-optimized websites that represent your brand and perform smoothly across all devices.",
   },
   {
-    title: "Custom Web Architectures",
+    title: "E-commerce Solutions",
     description:
-      "Developing high-performance, scalable web applications from the ground up. Our team utilizes modern frameworks to build secure and responsive digital platforms tailored perfectly to your business logic and data needs.",
+      "Build secure and scalable online stores with product management, payment gateway integration, and smooth shopping experiences.",
   },
   {
     title: "Mobile App Development",
     description:
-      "Creating seamless iOS and Android experiences. We specialize in cross-platform and native mobile solutions that provide frictionless user journeys, high performance, and deep integration with device capabilities.",
+      "Develop intuitive and high-performance mobile applications that provide engaging user experiences on Android and iOS platforms.",
   },
   {
-    title: "UI/UX for Development",
+    title: "Maintenance & Support",
     description:
-      "Bridging the gap between design and code. We prioritize user-centric design principles to ensure your digital products are not just visually appealing but also intuitive, accessible, and conversion-focused.",
-  },
-  {
-    title: "API & System Integration",
-    description:
-      "Connecting your digital ecosystem with robust API solutions. We ensure seamless data flow between your web/mobile apps and third-party services, from ERPs and CRMs to custom-built backend infrastructures.",
-  },
-  {
-    title: "Scalable Backend Solutions",
-    description:
-      "Building the robust foundation for your digital growth. Our backend engineering focuses on security, speed, and reliability, providing the power needed to support complex features and high traffic volumes.",
+      "Ensure your website or app runs smoothly with regular updates, security monitoring, performance optimization, and technical support.",
   },
 ];
 
@@ -82,8 +72,7 @@ export default function DevelopmentPage() {
               animate="visible"
               className="text-5xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-tight"
             >
-              Web & Mobile{" "}
-              <span className="text-primary italic">Development</span>
+              Web & App <span className="text-primary italic">Development</span>
             </motion.h1>
 
             <motion.p
@@ -93,8 +82,9 @@ export default function DevelopmentPage() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
             >
-              We deliver high-performance digital solutions ranging from premium
-              Shopify storefronts to complex custom web and mobile applications.
+              We build modern, high-performance digital solutions including
+              websites, mobile applications, and e-commerce platforms designed
+              to deliver seamless user experiences and support business growth.
             </motion.p>
           </div>
         </section>

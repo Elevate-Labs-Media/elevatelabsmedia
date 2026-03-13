@@ -17,25 +17,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elevatelabs.media"), // Replace with actual production URL
+  metadataBase: new URL("https://elevatelabsmedia.ae"),
   title: {
-    default: "Elevate Labs | Precision Marketing & Creative Excellence",
-    template: "%s | Elevate Labs",
+    default:
+      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
+    template: "%s | Elevate Labs Media",
   },
   description:
-    "Elevate Labs is a high-performance digital marketing agency dedicated to scaling brands. We fuse data-driven precision with creative storytelling.",
+    "Elevate Labs Media: Best digital marketing & creative agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision web development. Scale your brand today!",
   keywords: [
-    "digital marketing",
-    "web development",
-    "branding",
-    "e-commerce",
-    "SEO",
-    "Elevate Labs",
-    "media production",
+    "digital marketing agency UAE",
+    "creative agency Dubai",
+    "best marketing agency UAE",
+    "best marketing agency Abu Dhabi",
+    "web development UAE",
+    "web development Dubai",
+    "web development Abu Dhabi",
+    "branding Dubai",
+    "e-commerce solutions UAE",
+    "SEO services UAE",
+    "Elevate Labs Media",
+    "media production Dubai",
+    "cinematic photography UAE",
+    "creative photography Dubai",
+    "professional photography Abu Dhabi",
+    "commercial photography UAE",
   ],
-  authors: [{ name: "Elevate Labs Team" }],
-  creator: "Elevate Labs",
-  publisher: "Elevate Labs",
+  authors: [{ name: "Elevate Labs Media Team" }],
+  creator: "Elevate Labs Media",
+  publisher: "Elevate Labs Media",
   formatDetection: {
     email: false,
     address: false,
@@ -44,27 +54,29 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://elevatelabs.media",
-    siteName: "Elevate Labs",
-    title: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    url: "https://elevatelabsmedia.ae",
+    siteName: "Elevate Labs Media",
+    title:
+      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
     description:
-      "Elevate Your Online Presence with High-Performance Digital Systems.",
+      "Best digital marketing & web development agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision. Scale your brand today!",
     images: [
       {
-        url: "/og-image.png", // Ensure this exists or I will create a placeholder task
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Elevate Labs",
+        alt: "Elevate Labs Media - Best Digital Marketing Agency in UAE",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elevate Labs | Enterprise Digital Solutions & Growth Marketing",
+    title:
+      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
     description:
-      "Elevate Your Online Presence with High-Performance Digital Systems.",
+      "Best digital marketing & web development agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision. Scale your brand today!",
     images: ["/og-image.png"],
-    creator: "@elevatelabs", // If applicable
+    creator: "@elevatelabsmedia",
   },
   robots: {
     index: true,

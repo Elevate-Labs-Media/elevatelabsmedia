@@ -134,9 +134,10 @@ export default function About() {
               viewport={{ once: true }}
               variants={revealVariants}
               custom={0}
-              className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight text-center w-full whitespace-normal md:whitespace-nowrap"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-10 tracking-tighter leading-[1.05] text-center w-full uppercase"
             >
-              Digital Marketing. Strategic Storytelling.
+              Storytelling? <br />
+              <span className="text-primary">Our Passion.</span>
             </motion.h2>
 
             <div className="space-y-4 text-gray-300 text-lg leading-normal w-full">

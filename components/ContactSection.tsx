@@ -13,11 +13,15 @@ const ContactSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold mb-6">
-            LET&apos;S TALK
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05] uppercase">
+            Growth? <br />
+            <span className="text-primary">Let&apos;s talk.</span>
           </h2>
-          <p className="text-xl text-gray-400">
-            Have a project in mind? We&apos;d love to hear from you.
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+            Tell us what you&apos;re building and we&apos;ll get back within one
+            business day.
+            <br className="hidden md:block" /> For urgent queries, ping us on
+            WhatsApp.
           </p>
         </motion.div>
       </div>

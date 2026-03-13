@@ -43,9 +43,9 @@ const services = [
   },
   {
     icon: <ShoppingCart className="w-8 h-8" />,
-    title: "E-Commerce Development",
+    title: "Web & App Development",
     description:
-      "Robust, scalable, and sales-driven online stores tailored to your needs.",
+      "Modern, high-performance digital solutions including websites, mobile applications, and e-commerce platforms.",
   },
   {
     icon: <Search className="w-8 h-8" />,
@@ -103,10 +103,10 @@ const Services = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16 text-center services-header">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            OUR SERVICES
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05] uppercase">
+            Expertise? <br />
+            <span className="text-primary">Our Services.</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

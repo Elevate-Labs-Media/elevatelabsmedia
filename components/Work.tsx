@@ -3,8 +3,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import {
   motion,
-  useScroll,
-  useTransform,
   AnimatePresence,
   useMotionValue,
   useSpring,
@@ -207,13 +205,13 @@ const Work = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-            OUR WORKS
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05] uppercase">
+            Projects? <br />
+            <span className="text-primary">Our Work.</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed mx-auto mt-6">
             A showcase of our high-performance digital marketing campaigns,
-            cinematic brand stories, and data-driven success.
+            cinematic brand stories, and data-driven success in the UAE.
           </p>
         </motion.div>
       </div>

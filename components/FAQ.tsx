@@ -42,12 +42,12 @@ const FAQ = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Questions? <br />{" "}
-            <span className="text-primary">We have answers.</span>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter leading-[1.05] uppercase">
+            Curious? <br />
+            <span className="text-primary">We&apos;ve got you.</span>
           </h2>
-          <p className="text-gray-400">
-            Everything you need to know about working with Elevate Labs.
+          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl leading-relaxed mx-auto">
+            Everything you need to know about scaling with Elevate Labs Media.
           </p>
         </motion.div>
         <Accordion items={faqs} />
