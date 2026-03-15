@@ -205,7 +205,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-10 py-5 bg-primary text-black font-bold uppercase tracking-widest rounded-full hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/10"
                 >
-                  Download Profile
+                  View Profile
                   <ArrowRight size={20} />
                 </a>
               </motion.div>

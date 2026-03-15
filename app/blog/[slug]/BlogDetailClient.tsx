@@ -67,23 +67,12 @@ export default function BlogDetailClient({ blog }: Props) {
         <motion.div variants={itemVariants}>
           <button
             onClick={() => {
-              // 1. Navigate to home without hash jump
-              router.push("/", { scroll: false });
-              
-              // 2. Hide jump effect by ensuring we start at top of home
-              window.scrollTo({ top: 0, behavior: "instant" });
-
-              // 3. Trigger that beautiful smooth scroll down to the exact header pixel!
-              setTimeout(() => {
-                const target = document.getElementById("blog-header");
-                if (target) {
-                  // Push down further so it doesn't overlap the navbar
-                  const isMobile = window.innerWidth <= 768;
-                  const offset = isMobile ? -140 : -100;
-                  const y = target.getBoundingClientRect().top + window.scrollY + offset;
-                  window.scrollTo({ top: y, behavior: "smooth" });
-                }
-              }, 150);
+              // Simply go back in browser history to perfectly restore the previous scroll coordinate
+              if (typeof window !== "undefined" && window.history.length > 1) {
+                router.back();
+              } else {
+                router.push("/#blog");
+              }
             }}
             className="inline-flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-8 md:mb-12 group uppercase text-xs font-bold tracking-widest cursor-pointer bg-transparent border-none p-0"
           >

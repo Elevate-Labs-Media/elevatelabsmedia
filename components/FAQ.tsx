@@ -33,7 +33,7 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 md:py-32 px-4 md:px-10 scroll-mt-24">
+    <section id="faq" className="py-20 md:py-32 px-4 md:px-10 scroll-mt-12">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}

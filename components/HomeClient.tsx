@@ -11,6 +11,9 @@ import Blog from "@/components/Blog";
 import ContactSection from "@/components/ContactSection";
 import TopographicBackground from "@/components/TopographicBackground";
 
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useLenis } from "lenis/react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +22,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HomeClient() {
   const container = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const lenis = useLenis();
 
   useGSAP(
     () => {
@@ -42,8 +47,24 @@ export default function HomeClient() {
         );
       });
     },
-    { scope: container, dependencies: [] },
+    { scope: container, dependencies: [] }
   );
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    // 1. Immediately recalculate dimensions to sync restored scroll position
+    lenis.resize();
+    ScrollTrigger.refresh();
+
+    // 2. Safety check after a shorter delay to absorb image offsets
+    const timer = setTimeout(() => {
+      lenis.resize();
+      ScrollTrigger.refresh();
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [pathname, lenis]);
 
   return (
     <main ref={container} className="relative min-h-screen bg-black">
