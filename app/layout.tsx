@@ -18,30 +18,29 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elevatelabsmedia.ae"),
-  title: {
-    default:
-      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
-    template: "%s | Elevate Labs Media",
-  },
+  title: "Elevate Labs Media | Digital Marketing & Advertising Agency in Abu Dhabi",
   description:
-    "Elevate Labs Media: Best digital marketing & creative agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision web development. Scale your brand today!",
+    "Elevate Labs Media is a leading digital marketing, branding, and advertising agency in Abu Dhabi helping brands scale with SEO, performance marketing, web development, and creative photography and media production across the UAE.",
   keywords: [
-    "digital marketing agency UAE",
-    "creative agency Dubai",
-    "best marketing agency UAE",
-    "best marketing agency Abu Dhabi",
-    "web development UAE",
-    "web development Dubai",
+    "digital marketing agency Abu Dhabi",
+    "advertising agency Abu Dhabi",
+    "marketing agency UAE",
+    "branding Abu Dhabi",
+    "branding agency UAE",
+    "performance marketing UAE",
+    "SEO agency Abu Dhabi",
     "web development Abu Dhabi",
-    "branding Dubai",
+    "creative photography Abu Dhabi",
+    "media production Abu Dhabi",
+    "cinematic photography UAE",
+    "commercial photography UAE",
     "e-commerce solutions UAE",
     "SEO services UAE",
     "Elevate Labs Media",
-    "media production Dubai",
-    "cinematic photography UAE",
-    "creative photography Dubai",
-    "professional photography Abu Dhabi",
-    "commercial photography UAE",
+    "creative agency Abu Dhabi",
+    "best marketing agency UAE",
+    "best marketing agency Abu Dhabi",
+    "web development UAE",
   ],
   authors: [{ name: "Elevate Labs Media Team" }],
   creator: "Elevate Labs Media",
@@ -52,14 +51,13 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://elevatelabsmedia.ae",
-    siteName: "Elevate Labs Media",
-    title:
-      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
+    title: "Elevate Labs Media",
     description:
-      "Best digital marketing & web development agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision. Scale your brand today!",
+      "Leading digital marketing & advertising agency in Abu Dhabi helping brands scale.",
+    url: "https://www.elevatelabsmedia.ae",
+    siteName: "Elevate Labs Media",
+    locale: "en_US",
+    type: "website",
     images: [
       {
         url: "/og-image.png",
@@ -71,10 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Elevate Labs Media | Best Digital Marketing & Creative Agency in UAE",
+    title: "Elevate Labs Media | Digital Marketing & Advertising Agency in Abu Dhabi",
     description:
-      "Best digital marketing & web development agency in UAE. Scaling brands in Dubai & Abu Dhabi with precision. Scale your brand today!",
+      "Leading digital marketing & advertising agency in Abu Dhabi helping brands scale.",
     images: ["/og-image.png"],
     creator: "@elevatelabsmedia",
   },
@@ -89,6 +86,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon-16x16.png",
+    apple: "/favicon/apple-touch-icon.png",
+  },
+  manifest: "/favicon/site.webmanifest",
 };
 
 export default function RootLayout({
